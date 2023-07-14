@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.home = new System.Windows.Forms.Button();
+            this.draw = new System.Windows.Forms.Button();
             this.parC = new System.Windows.Forms.TextBox();
             this.parB = new System.Windows.Forms.TextBox();
             this.parA = new System.Windows.Forms.TextBox();
-            this.draw = new System.Windows.Forms.Button();
+            this.home = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,64 +47,66 @@
             this.panel1.Controls.Add(this.home);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(861, 603);
+            this.panel1.Size = new System.Drawing.Size(1148, 742);
             this.panel1.TabIndex = 0;
-            // 
-            // home
-            // 
-            this.home.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.home.Location = new System.Drawing.Point(11, 573);
-            this.home.Margin = new System.Windows.Forms.Padding(2);
-            this.home.Name = "home";
-            this.home.Size = new System.Drawing.Size(56, 19);
-            this.home.TabIndex = 1;
-            this.home.Text = "Home";
-            this.home.UseVisualStyleBackColor = true;
-            this.home.Click += new System.EventHandler(this.home_Click);
-            // 
-            // parC
-            // 
-            this.parC.Location = new System.Drawing.Point(401, 306);
-            this.parC.Margin = new System.Windows.Forms.Padding(2);
-            this.parC.Name = "parC";
-            this.parC.Size = new System.Drawing.Size(76, 20);
-            this.parC.TabIndex = 37;
-            // 
-            // parB
-            // 
-            this.parB.Location = new System.Drawing.Point(401, 267);
-            this.parB.Margin = new System.Windows.Forms.Padding(2);
-            this.parB.Name = "parB";
-            this.parB.Size = new System.Drawing.Size(76, 20);
-            this.parB.TabIndex = 36;
-            // 
-            // parA
-            // 
-            this.parA.Location = new System.Drawing.Point(401, 228);
-            this.parA.Margin = new System.Windows.Forms.Padding(2);
-            this.parA.Name = "parA";
-            this.parA.Size = new System.Drawing.Size(76, 20);
-            this.parA.TabIndex = 35;
             // 
             // draw
             // 
-            this.draw.Location = new System.Drawing.Point(84, 573);
-            this.draw.Margin = new System.Windows.Forms.Padding(2);
+            this.draw.Location = new System.Drawing.Point(112, 705);
+            this.draw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.draw.Name = "draw";
-            this.draw.Size = new System.Drawing.Size(66, 19);
+            this.draw.Size = new System.Drawing.Size(88, 23);
             this.draw.TabIndex = 38;
             this.draw.Text = "Draw";
             this.draw.UseVisualStyleBackColor = true;
             this.draw.Click += new System.EventHandler(this.draw_Click);
             // 
-            // Form4
+            // parC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.parC.Location = new System.Drawing.Point(33, 245);
+            this.parC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.parC.Name = "parC";
+            this.parC.Size = new System.Drawing.Size(100, 22);
+            this.parC.TabIndex = 37;
+            // 
+            // parB
+            // 
+            this.parB.Location = new System.Drawing.Point(33, 197);
+            this.parB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.parB.Name = "parB";
+            this.parB.Size = new System.Drawing.Size(100, 22);
+            this.parB.TabIndex = 36;
+            // 
+            // parA
+            // 
+            this.parA.Location = new System.Drawing.Point(33, 149);
+            this.parA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.parA.Name = "parA";
+            this.parA.Size = new System.Drawing.Size(100, 22);
+            this.parA.TabIndex = 35;
+            // 
+            // home
+            // 
+            this.home.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.home.Location = new System.Drawing.Point(15, 705);
+            this.home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.home.Name = "home";
+            this.home.Size = new System.Drawing.Size(75, 23);
+            this.home.TabIndex = 1;
+            this.home.Text = "Home";
+            this.home.UseVisualStyleBackColor = true;
+            this.home.Click += new System.EventHandler(this.home_Click);
+            // 
+            // sandbox
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 603);
+            this.ClientSize = new System.Drawing.Size(1148, 742);
             this.Controls.Add(this.panel1);
-            this.Name = "Form4";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "sandbox";
             this.Text = "Form4";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form4_FormClosed);
             this.panel1.ResumeLayout(false);

@@ -121,6 +121,7 @@
             this.parA.TabIndex = 26;
             this.parA.Click += new System.EventHandler(this.par_Click);
             this.parA.TextChanged += new System.EventHandler(this.parA_TextChanged);
+            this.parA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.parA_KeyPress);
             // 
             // txtBox
             // 
@@ -157,7 +158,7 @@
             // findA
             // 
             this.findA.Location = new System.Drawing.Point(123, 41);
-            this.findA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.findA.Margin = new System.Windows.Forms.Padding(4);
             this.findA.Name = "findA";
             this.findA.Size = new System.Drawing.Size(88, 25);
             this.findA.TabIndex = 36;
@@ -168,7 +169,7 @@
             // findB
             // 
             this.findB.Location = new System.Drawing.Point(123, 89);
-            this.findB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.findB.Margin = new System.Windows.Forms.Padding(4);
             this.findB.Name = "findB";
             this.findB.Size = new System.Drawing.Size(88, 25);
             this.findB.TabIndex = 37;
@@ -179,7 +180,7 @@
             // findC
             // 
             this.findC.Location = new System.Drawing.Point(123, 135);
-            this.findC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.findC.Margin = new System.Windows.Forms.Padding(4);
             this.findC.Name = "findC";
             this.findC.Size = new System.Drawing.Size(88, 25);
             this.findC.TabIndex = 38;
@@ -253,7 +254,7 @@
             // FindGamma
             // 
             this.FindGamma.Location = new System.Drawing.Point(355, 209);
-            this.FindGamma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FindGamma.Margin = new System.Windows.Forms.Padding(4);
             this.FindGamma.Name = "FindGamma";
             this.FindGamma.Size = new System.Drawing.Size(88, 25);
             this.FindGamma.TabIndex = 47;
@@ -264,7 +265,7 @@
             // FindBeta
             // 
             this.FindBeta.Location = new System.Drawing.Point(355, 161);
-            this.FindBeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FindBeta.Margin = new System.Windows.Forms.Padding(4);
             this.FindBeta.Name = "FindBeta";
             this.FindBeta.Size = new System.Drawing.Size(88, 25);
             this.FindBeta.TabIndex = 46;
@@ -275,7 +276,7 @@
             // FindAlpha
             // 
             this.FindAlpha.Location = new System.Drawing.Point(355, 114);
-            this.FindAlpha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FindAlpha.Margin = new System.Windows.Forms.Padding(4);
             this.FindAlpha.Name = "FindAlpha";
             this.FindAlpha.Size = new System.Drawing.Size(88, 25);
             this.FindAlpha.TabIndex = 45;
@@ -297,7 +298,7 @@
             // but_height_A
             // 
             this.but_height_A.Location = new System.Drawing.Point(15, 183);
-            this.but_height_A.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.but_height_A.Margin = new System.Windows.Forms.Padding(4);
             this.but_height_A.Name = "but_height_A";
             this.but_height_A.Size = new System.Drawing.Size(88, 25);
             this.but_height_A.TabIndex = 48;
@@ -308,7 +309,7 @@
             // but_height_B
             // 
             this.but_height_B.Location = new System.Drawing.Point(15, 231);
-            this.but_height_B.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.but_height_B.Margin = new System.Windows.Forms.Padding(4);
             this.but_height_B.Name = "but_height_B";
             this.but_height_B.Size = new System.Drawing.Size(88, 25);
             this.but_height_B.TabIndex = 49;
@@ -319,7 +320,7 @@
             // but_height_C
             // 
             this.but_height_C.Location = new System.Drawing.Point(15, 281);
-            this.but_height_C.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.but_height_C.Margin = new System.Windows.Forms.Padding(4);
             this.but_height_C.Name = "but_height_C";
             this.but_height_C.Size = new System.Drawing.Size(88, 25);
             this.but_height_C.TabIndex = 50;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Windows.Forms;
 
@@ -113,9 +114,15 @@ namespace KursovaNEW
         //find side buttons
         private void button2_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parB.Text))
+            {
+                MessageBox.Show("Грешка parB е празен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double sideB = double.Parse(parB.Text);
             double sideC = double.Parse(parC.Text);
             double angle;
+            
             //трябва да добавя клик евент на C ако няма придоставен ъгъл alpha
             if (string.IsNullOrEmpty(anglA.Text))
             {
@@ -134,6 +141,11 @@ namespace KursovaNEW
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Грепка parА е празен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double sideA = double.Parse(parA.Text);
             double sideC = double.Parse(parC.Text);
             double angle;
@@ -154,6 +166,11 @@ namespace KursovaNEW
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Грепка parA е празен", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double sideA = double.Parse(parA.Text);
             double sideB = double.Parse(parB.Text);
             double angle;
@@ -177,6 +194,11 @@ namespace KursovaNEW
         //намираме височини
         private void but_height_A_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double sideA = double.Parse(parA.Text);
             double face;
             if (string.IsNullOrEmpty(faceResBox.Text))
@@ -194,6 +216,11 @@ namespace KursovaNEW
 
         private void but_height_B_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parB.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double sideB = double.Parse(parB.Text);
             double face;
             if (string.IsNullOrEmpty(faceResBox.Text))
@@ -211,6 +238,11 @@ namespace KursovaNEW
 
         private void but_height_C_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parC.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double sideC = double.Parse(parC.Text);
             double face;
             if (string.IsNullOrEmpty(faceResBox.Text))
@@ -229,34 +261,57 @@ namespace KursovaNEW
         //намиране на ъглите
         private void FindAlpha_Click(object sender, EventArgs e)
         {
-            double sideA = double.Parse(parA.Text);
-            double sideB = double.Parse(parB.Text);
-            double sideC = double.Parse(parC.Text);
-            double angleA = Math.Acos((sideB * sideB + sideC * sideC - sideA * sideA) / (2 * sideB * sideC)) * 180 / Math.PI;
+            ThreeSided triangle = new ThreeSided();
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
+            double SideA = double.Parse(parA.Text);
+            double SideB = double.Parse(parB.Text);
+            double SideC = double.Parse(parC.Text);
+            double angleA = Math.Acos((SideB * SideB + SideC * SideC - SideA * SideA) / (2 * SideB * SideC)) * 180 / Math.PI;
             anglA.Text = angleA.ToString("F0");
         }
 
         private void FindBeta_Click(object sender, EventArgs e)
         {
-            double sideA = double.Parse(parA.Text);
-            double sideB = double.Parse(parB.Text);
-            double sideC = double.Parse(parC.Text);
-            double angleA = Math.Acos((sideA * sideA + sideC * sideC - sideB * sideB) / (2 * sideA * sideC)) * 180 / Math.PI;
+            ThreeSided triangle = new ThreeSided();
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
+            double SideA = double.Parse(parA.Text);
+            double SideB = double.Parse(parB.Text);
+            double SideC = double.Parse(parC.Text);
+            double angleA = Math.Acos((SideA * SideA + SideC * SideC - SideB * SideB) / (2 * SideA * SideC)) * 180 / Math.PI;
             anglB.Text = angleA.ToString("F0");
         }
 
         private void FindGamma_Click(object sender, EventArgs e)
         {
-            double sideA = double.Parse(parA.Text);
-            double sideB = double.Parse(parB.Text);
-            double sideC = double.Parse(parC.Text);
-            double angleA = Math.Acos((sideA * sideA + sideB * sideB - sideC * sideC) / (2 * sideA * sideB)) * 180 / Math.PI;
+            ThreeSided triangle = new ThreeSided();
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
+            double SideA = double.Parse(parA.Text);
+            double SideB = double.Parse(parB.Text);
+            double SideC = double.Parse(parC.Text);
+            double angleA = Math.Acos((SideA * SideA + SideC * SideB - SideC * SideC) / (2 * SideA * SideB)) * 180 / Math.PI;
             anglG.Text = angleA.ToString("F0");
         }
 
         //лице и обиколка
         private void faceBttn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double sideA = double.Parse(parA.Text);
             double sideB = double.Parse(parB.Text);
             double angleC = double.Parse(anglG.Text);
@@ -270,6 +325,11 @@ namespace KursovaNEW
         }
         private void circBttn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
             double value1 = double.Parse(parA.Text);
             double value2 = double.Parse(parB.Text);
             double value3 = double.Parse(parC.Text);
@@ -307,39 +367,45 @@ namespace KursovaNEW
             SolidBrush brush = new SolidBrush(selectedColor);
 
             // Взимане на стойностите на страните на триъгълника от текстовите кутии и конвертиране в пиксели
-            int side1Cm = int.Parse(parA.Text);
-            int side2Cm = int.Parse(parB.Text);
-            int side3Cm = int.Parse(parC.Text);
+            if (string.IsNullOrEmpty(parA.Text))
+            {
+                MessageBox.Show("Грешка, въведете параметри", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Exit the method early to prevent further execution
+            }
+            ThreeSided triangle = new ThreeSided();
+            triangle.SideA = float.Parse(parA.Text);
+            triangle.SideB = float.Parse(parB.Text);
+            triangle.SideC = float.Parse(parC.Text);
 
             int pixelsPerCm = 38; // Съотношението между сантиметри и пиксели
 
             // Конвертиране на стойностите от сантиметри в пиксели
-            int side1 = side1Cm * pixelsPerCm;
-            int side2 = side2Cm * pixelsPerCm;
-            int side3 = side3Cm * pixelsPerCm;
+            float side1 = triangle.SideA * pixelsPerCm;
+            float side2 = triangle.SideB * pixelsPerCm;
+            float side3 = triangle.SideC * pixelsPerCm;
 
             // Изчисляване на полупериметъра на триъгълника
-            double semiperimeter = (side1 + side2 + side3) / 2.0;
+            float semiperimeter = (side1 + side2 + side3) / 2.0f;
 
             // Изчисляване на площа на триъгълника по формулата на Херон
-            double area = Math.Sqrt(semiperimeter * (semiperimeter - side1) * (semiperimeter - side2) * (semiperimeter - side3));
+            float area = (float)Math.Sqrt(semiperimeter * (semiperimeter - side1) * (semiperimeter - side2) * (semiperimeter - side3));
 
             // Изчисляване на височината на триъгълника
-            double height = (2 * area) / side1;
+            float height = (2 * area) / side1;
 
-            int offsetX = (panel1.Width - side1) / 2;
-            int offsetY = (panel1.Height - (int)height) / 2;
+            float offsetX = (panel1.Width - side1) / 2;
+            float offsetY = (panel1.Height - (float)height) / 2;
 
-            int x1 = offsetX;
-            int y1 = offsetY;
-            int x2 = side1 + offsetX;
-            int y2 = offsetY;
-            int x3 = (int)((Math.Pow(side2, 2) + Math.Pow(side1, 2) - Math.Pow(side3, 2)) / (2 * side1)) + offsetX;
-            int y3 = (int)height + offsetY;
+            float x1 = offsetX;
+            float y1 = offsetY;
+            float x2 = side1 + offsetX;
+            float y2 = offsetY;
+            float x3 = (float)((Math.Pow(side2, 2) + Math.Pow(side1, 2) - Math.Pow(side3, 2)) / (2 * side1)) + offsetX;
+            float y3 = (float)height + offsetY;
 
 
             // Създаване на масив от точките на триъгълника
-            Point[] points = { new Point(x1, y1), new Point(x2, y2), new Point(x3, y3) };
+            PointF[] points = { new PointF(x1, y1), new PointF(x2, y2), new PointF(x3, y3) };
 
             // Рисуване на пълния триъгълник
             plain.FillPolygon(brush, points);
@@ -370,7 +436,21 @@ namespace KursovaNEW
             height_A.Clear();
             height_B.Clear();
             height_C.Clear();
+        }
 
+        private void parA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (
+                !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+                {
+                    e.Handled = true;
+                }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

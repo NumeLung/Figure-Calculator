@@ -41,10 +41,12 @@ namespace KursovaNEW
 
         private void circBttn_MouseClick(object sender, MouseEventArgs e)
         {
-            double value1 = double.Parse(parA.Text);
-            double value2 = double.Parse(parB.Text);
-
-            double result = value1 + value2;
+            FourSided rectangle = new FourSided();
+            rectangle.SideA = float.Parse(parA.Text);
+            rectangle.SideB = float.Parse(parB.Text);
+            rectangle.SideC = float.Parse(parA.Text);
+            rectangle.SideD = float.Parse(parB.Text);
+            double result = rectangle.SideA + rectangle.SideB + rectangle.SideC + rectangle.SideD;
 
             cirResBox.Text = result.ToString();
         }
