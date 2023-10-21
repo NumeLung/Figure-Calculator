@@ -295,7 +295,7 @@ namespace KursovaNEW
             if (string.IsNullOrEmpty(parA.Text))
             {
                 MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Exit the method early to prevent further execution
+                return; 
             }
             double SideA = double.Parse(parA.Text);
             double SideB = double.Parse(parB.Text);
@@ -310,7 +310,7 @@ namespace KursovaNEW
             if (string.IsNullOrEmpty(parA.Text))
             {
                 MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Exit the method early to prevent further execution
+                return; 
             }
             double sideA = double.Parse(parA.Text);
             double sideB = double.Parse(parB.Text);
@@ -328,13 +328,15 @@ namespace KursovaNEW
             if (string.IsNullOrEmpty(parA.Text))
             {
                 MessageBox.Show("Липасва параметър", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Exit the method early to prevent further execution
+                return; 
             }
-            double value1 = double.Parse(parA.Text);
-            double value2 = double.Parse(parB.Text);
-            double value3 = double.Parse(parC.Text);
 
-            double result = value1 + value2 + value3;
+            ThreeSided triangle = new ThreeSided();
+            triangle.SideA = float.Parse(parA.Text);
+            triangle.SideB = float.Parse(parB.Text);
+            triangle.SideC = float.Parse(parC.Text);
+            //изплозваме виртуалния метод
+            float result = triangle.CalculatePerimeter();
 
             cirResBox.Text = result.ToString();
         }
@@ -370,8 +372,10 @@ namespace KursovaNEW
             if (string.IsNullOrEmpty(parA.Text))
             {
                 MessageBox.Show("Грешка, въведете параметри", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Exit the method early to prevent further execution
+                return;
             }
+
+            //използваме от класа страните
             ThreeSided triangle = new ThreeSided();
             triangle.SideA = float.Parse(parA.Text);
             triangle.SideB = float.Parse(parB.Text);

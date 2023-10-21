@@ -44,9 +44,10 @@ namespace KursovaNEW
             FourSided rectangle = new FourSided();
             rectangle.SideA = float.Parse(parA.Text);
             rectangle.SideB = float.Parse(parB.Text);
-            rectangle.SideC = float.Parse(parA.Text);
-            rectangle.SideD = float.Parse(parB.Text);
-            double result = rectangle.SideA + rectangle.SideB + rectangle.SideC + rectangle.SideD;
+            rectangle.SideC = float.Parse(parA.Text); 
+            rectangle.SideD = float.Parse(parB.Text); //Използван override virtual method
+
+            float result = rectangle.CalculatePerimeter(); // Използваме CalculatePerimeter()
 
             cirResBox.Text = result.ToString();
         }
